@@ -18,7 +18,7 @@ print()
 tipo = input('Tecla: ')
 print()
 
-if tipo == 'R' or tipo == 'r':
+if tipo == 'R' or tipo == 'r': # Tanto faz digitar maiúscula ou minúscula. 
     if kwh <= 500:
         pre = kwh * 0.4
     else:
