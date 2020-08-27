@@ -10,11 +10,11 @@ Porque já vem pré-instalado e configurado no Ubuntu 20.04 LTS (versão mais at
 
 OBS.: você pode escolher outras versões, **mas é fortemente recomendável que seja python3**.
 
-* **Por que IDLE**?
+:point_right: **Por que IDLE**?
 
 Porque é uma IDE extremamente leve e muito simples de usar. Também é compatível com GNU/Linux.
 
-* **Por que Python**?
+:point_right: **Por que Python**?
 
 Criado por Guido van Rossum no final dos anos 80 e divulgado em 1991, Python é uma linguagem de programação orientada a objetos simples e poderosa. Permite a criação de scripts versáteis úteis para diversos fins, dentre eles: 
 
@@ -24,4 +24,6 @@ Criado por Guido van Rossum no final dos anos 80 e divulgado em 1991, Python é 
 *  Sistemas aeroespaciais;
 * *Ethical hacking* e Segurança da Informação. 
 
-**Então, tá esperando o que? Use o repositório pra aprender esta linguagem fantástica e venha fazer parte da comunidade Python!** 
+**Então, tá esperando o que?** 
+
+**Use o repositório pra aprender esta linguagem fantástica e venha fazer parte da comunidade Python!** 
