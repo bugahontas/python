@@ -8,7 +8,7 @@ Seja muito bem vindo(a)! Este repositório contém códigos escritos em Python t
 
 :point_right: **Por que python3.8**?
 
-Porque já vem pré-instalado e configurado no Ubuntu 20.04 LTS (sistema operacional da máquina de testes). Ou seja, pronto pra uso e, melhor: num sistema GNU/Linux **livre**, **leve**, **seguro** e **estável**! 
+Porque já vem pré-instalado no Ubuntu 20.04 LTS (sistema operacional da máquina de testes). Ou seja, pronto pra uso e, melhor: num sistema GNU/Linux **livre**, **leve**, **seguro** e **estável**! 
 
 :warning: ATENÇÃO.: você pode escolher outras versões e outros sistemas operacionais compatíveis, mas em todos eles é **RECOMENDÁVEL usar python3**.
 
