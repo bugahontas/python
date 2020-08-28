@@ -28,6 +28,6 @@ Criado por Guido van Rossum no final dos anos 80 e divulgado em 1991, Python é 
 
 --- 
 
-					 Então, tá esperando o que? 
+					  Então, tá esperando o que? 
 
 :computer: **Use o repositório pra aprender esta linguagem fantástica e venha fazer parte da comunidade Python!** :snake:
