@@ -6,9 +6,9 @@ Seja muito bem vindo(a)! Este repositório contém códigos escritos em Python t
 
 :point_right: **Por que python3.8**?
 
-Porque já vem pré-instalado e configurado no Ubuntu 20.04 LTS (versão mais atualizada do Ubuntu até o momento). Ou seja, pronto pra uso e, melhor: num sistema operacional **livre**, **leve** e **estável**! 
+Porque já vem pré-instalado e configurado no Ubuntu 20.04 LTS (sistema operacional da máquina de testes). Ou seja, pronto pra uso e, melhor: num sistema GNU/Linux **livre**, **leve**, **seguro** e **estável**! 
 
-OBS.: você pode escolher outras versões, **mas é fortemente recomendável que seja python3**.
+:warning: ATENÇÃO.: você pode escolher outras versões e outros sistemas operacionais compatíveis, mas em todos eles é **RECOMENDÁVEL usar python3**.
 
 :point_right: **Por que IDLE**?
 
@@ -18,12 +18,14 @@ Porque é uma IDE extremamente leve e muito simples de usar. Também é compatí
 
 Criado por Guido van Rossum no final dos anos 80 e divulgado em 1991, Python é uma linguagem de programação orientada a objetos simples e poderosa. Permite a criação de scripts versáteis úteis para diversos fins, dentre eles: 
 
-:snake: Introdução à lógica de programação; 
-:snake: Automatização de tarefas massantes; 
-:snake: Criação de jogos e mídias audiovisuais;
-:snake: Sistemas aeroespaciais;
-:snake: *Ethical hacking* e Segurança da Informação. 
+*  Introdução à lógica de programação; 
+*  Automatização de tarefas massantes; 
+*  Criação de jogos e mídias audiovisuais;
+*  Sistemas aeroespaciais;
+* *Ethical hacking* e Segurança da Informação.
+
+--- 
 
 **Então, tá esperando o que?** 
 
-**Use o repositório pra aprender esta linguagem fantástica e venha fazer parte da comunidade Python!** 
+**Use o repositório pra aprender esta linguagem fantástica e venha fazer parte da comunidade Python!** :snake:  :computer:
