@@ -21,10 +21,10 @@ Porque é uma IDE extremamente leve e muito simples de usar. Também é compatí
 Criado por Guido van Rossum no final dos anos 80 e divulgado em 1991, Python é uma linguagem de programação orientada a objetos simples e poderosa. Permite a criação de scripts versáteis úteis para diversos fins, dentre eles: 
 
 *  Introdução à lógica de programação:exclamation: 
-*  Automatização de tarefas massantes; 
-*  Criação de jogos e mídias audiovisuais;
-*  Sistemas aeroespaciais;
-* *Ethical hacking* e Segurança da Informação.
+*  Automatização de tarefas massantes:exclamation: 
+*  Criação de jogos e mídias audiovisuais:exclamation:
+*  Sistemas aeroespaciais:exclamation:
+* *Ethical hacking* e Segurança da Informação:exclamation:
 
 --- 
 
