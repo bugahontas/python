@@ -4,6 +4,8 @@
  
 Seja muito bem vindo(a)! Este repositório contém códigos escritos em Python testados com o interpretador na versão 3.8.2 dentro da IDE **IDLE** (*Python's Integrated Development and Learning Environment*). 
 
+Qualquer dúvida sobre os códigos e configurações do interpretador ou do IDLE, abra uma issue e vamos conversar! :wink:
+
 ---
 
 :point_right: **Por que python3.8**?
