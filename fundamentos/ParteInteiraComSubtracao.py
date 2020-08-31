@@ -11,7 +11,7 @@ if n1 % n2 == 0:
     q = 1
     while aux != 0:
         aux = aux - n2
-        q = q + 1 # 'q' aqui é uma espécie de contador que conta quantas vezes 'n2' cabe em 'n1'
+        q = q + 1 # 'q' aqui é uma espécie de contador que conta quantas vezes 'n2' cabe em 'n1'. Ou seja, o próprio quociente!
 else:
     novo_n1 = n1 - (n1 % n2) # Desconsidera o resto para se obter apenas a parte inteira do quociente.
     aux = novo_n1 - n2
