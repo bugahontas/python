@@ -24,7 +24,7 @@ while c <= tam:
     c = c + 1
 
 print('=' * 10,'RESULTADO', '=' * 10)
-if tot == 0: # Para cada abre-parênteses (+1) tem que ter um fecha-parêntese (-1), sempre resultando em 0.
+if tot == 0: # Para cada abre-parênteses (+1) tem que ter um fecha-parênteses (-1), sempre resultando em 0.
     print('                     Expressão correta!')
 else: # Se o tot final for diferente de 0, é porque algum parêntese não foi fechado.
     print('Expressão errada! Parênteses não fecham.')
