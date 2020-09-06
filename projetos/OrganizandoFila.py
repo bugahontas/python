@@ -42,4 +42,5 @@ while True:
         print('SAINDO DO PROGRAMA...')
         print()
         break
+
 print(f'Foram atendidos {tot} cliente(s)!')
