@@ -49,10 +49,10 @@ if d >= 2:
         print(f'{qtd:.0f} nota(s) de R$20.00')
         tot = tot + qtd * 20
 if u != 0:
-    if d == 1: # Botei esta dezena aqui ao invés da linha 47 para evitar repetir '1 nota de 10' duas vezes caso a unidade seja diferente de 0.
-        print('2 notas de R$10.00')
+    if d == 1: # Como o valor mínimo é R$10, preferi arredondar qualquer unidade maior que 0 com uma nota de R$10.
+        print('2 notas de R$10.00') # Junta 1 nota de R$10 da unidade com outra nota de R$10 da dezena.
         tot = tot + 2 * 10
-    elif tot < s: # Se o total até aqui já for maior que o valor do saque, não tem porquê acrescentar mais uma nota de R$10.
+    elif tot < s: # Se o total até aqui já for maior que o valor do saque, basta acrescentar apenas uma nota de R$10.
         print('1 nota de R$10.00')
         tot = tot + 10
 
