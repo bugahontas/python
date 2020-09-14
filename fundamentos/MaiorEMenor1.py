@@ -1,4 +1,4 @@
-# Verifica o maior e menor números digitados
+# Verifica o maior e menor números digitados com as funções max e min.
 
 n1 = int(input('Primeiro número: '))
 n2 = int(input('Segundo número: '))
