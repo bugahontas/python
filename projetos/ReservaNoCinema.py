@@ -19,6 +19,11 @@ while True:
     print()
     busca = int(input('Digite o número da sala: '))
     print()
+    if busca != 10 and busca != 11 and busca != 12 and busca != 13 and busca != 14:
+        while True:
+            busca = int(input('SALA INEXISTENTE! Digite outro número de sala: '))
+            if busca == 10 or busca == 11 or busca == 12 or busca == 13 or busca == 14:
+                break
             
     print()
     c = 0
