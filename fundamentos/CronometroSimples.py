@@ -1,5 +1,5 @@
 # Cronômetro simples: conta de 0 até 20 minutos em contagem progressiva.
-# Altere a linha 11 do código para contar até outros valores.
+# Altere a linha 'if m == 20:' do código e insira outro valor da sua preferência.
 # Este código aceita valores de 1 a 59 minutos.
 
 from time import sleep
