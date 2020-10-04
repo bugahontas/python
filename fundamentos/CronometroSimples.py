@@ -8,7 +8,7 @@ m = 0
 h = 0
 aux = 0
 while s < 60:
-    sleep(0.01)
+    sleep(1)
     print('%02d' % h, ':', '%02d' % m, ':', '%02d' % s)
     if h == 1:
         break
