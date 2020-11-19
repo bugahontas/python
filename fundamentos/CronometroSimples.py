@@ -10,7 +10,7 @@ aux = 0
 while s < 60:
     sleep(1)
     print('%02d' % h, ':', '%02d' % m, ':', '%02d' % s)
-    if h == 1:
+    if m == 1:
         break
     s = s + 1
     if s == 60:
