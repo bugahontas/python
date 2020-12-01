@@ -2,6 +2,10 @@
 
 # Atenção: para que o código funcione corretamente, cada lista deve conter 5 números diferentes entre si.
 
+# Os códigos "SemRepetidos1" e "SemRepetidos2" ficaram melhores do que este. Mas não vou apagar este aqui porque foi através dele que consegui aprimorar e produzir os outros dois códigos.
+
+#VivendoEAprendendo 
+
 l1 = [10, 0, 54, 7.2, 9]
 l2 = [0, 3, 7.2, 54, 1.1]
 l3 = []
