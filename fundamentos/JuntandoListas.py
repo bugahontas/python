@@ -1,4 +1,4 @@
-# Juntando listas: cria e junta duas listas em uma terceira.
+# Juntando listas: cria e junta duas listas em uma terceira usando apenas o método append().
 
 l1 = []
 l2 = []
