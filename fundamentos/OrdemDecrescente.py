@@ -1,4 +1,4 @@
-# Ordem Decrescente: organiza os elementos de uma lista do maior para o menor de forma manual.
+# Ordem Decrescente: organiza os elementos de uma lista do maior para o menor pelo método Bubble Sort.
 
 # Eficiente para listas pequenas.
 

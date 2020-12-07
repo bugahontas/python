@@ -1,4 +1,4 @@
-# Ordem Crescente: organiza os elementos de uma lista do menor para o maior de forma manual.
+# Ordem Crescente: organiza os elementos de uma lista do menor para o maior pelo método Bubble Sort.
 
 # Eficiente para listas pequenas.
 
