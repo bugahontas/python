@@ -1,3 +1,7 @@
+# Ordem Decrescente: organiza os elementos de uma lista do maior para o menor de forma manual.
+
+# Eficiente para listas pequenas.
+
 lista = []
 
 qtd = int(input('Criar lista com quantos números? '))
