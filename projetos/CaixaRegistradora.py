@@ -1,4 +1,4 @@
-# Gestão De Estoque 2
+# Caixa Registradora
 
 estoque = {'CARNE': [20.89, 1000],
                      'BANANA': [1.99, 1000],
