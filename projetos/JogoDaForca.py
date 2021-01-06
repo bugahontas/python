@@ -24,6 +24,7 @@ while t <= tent:
     fun_exib()
     while True:
         l = input(f'{t}a. Tentativa - Digite uma letra: ')
+        l = l.lower()
         if l not in certas and l not in erradas:
             break
         else:
