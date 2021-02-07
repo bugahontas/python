@@ -39,7 +39,7 @@ def busca_numero(busca, lista):
 
 def informa_posicao(resultado, lista):
     posicao = 0
-    while posicao < len(lista):
+    while posicao < len(lista): #Botei bloco while aqui só pra não usar bloco for o tempo todo...
         if lista[posicao] == resultado:
             return posicao + 1
         posicao = posicao + 1
