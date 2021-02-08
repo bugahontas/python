@@ -18,7 +18,9 @@ def main():
     Posicao = None
     if Resultado != None:
         Posicao = informa_posicao(Resultado, Lista)
-    mensagem(Resultado, Busca, Posicao)
+        mensagem(Resultado, Busca, Posicao)
+    else:
+        mensagem(Resultado, Busca)
 
 def cria_lista():
     lista = []
@@ -44,7 +46,7 @@ def informa_posicao(resultado, lista):
             return posicao + 1
         posicao = posicao + 1
 
-def mensagem(resultado, busca, posicao):
+def mensagem(resultado, busca, posicao = -1):
     print()
     if resultado == None:
         print(f'Número {busca} não encontrado...')
