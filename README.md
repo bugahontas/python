@@ -1,4 +1,4 @@
-![python](https://user-images.githubusercontent.com/63076968/91613085-380ba280-e955-11ea-90f4-59659be681a2.jpeg)
+![python](https://user-images.githubusercontent.com/63076968/108634158-0af90200-7457-11eb-8b12-af44e3c255d9.png)
 
 # Python (versão 3.8.2)
  
