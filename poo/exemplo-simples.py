@@ -13,9 +13,13 @@ class Pessoa():
             print('Logo, é MENOR de idade!')
         print()
 
-p0 = Pessoa('Carlos', 42) #Instanciação: chama o método especial __init__
-p1 = Pessoa('Daniela', 16)
-print(p0) #Chama o método especial __str__
-p0.maioridade()
-print(p1)
-p1.maioridade()
+def main(): #Função principal: os comandos serão executados a partir daqui.
+    p0 = Pessoa('Carlos', 42) #Instanciação: chama o método especial __init__
+    p1 = Pessoa('Daniela', 16)
+    print(p0) #Chama o método especial __str__
+    p0.maioridade()
+    print(p1)
+    p1.maioridade()  
+
+if __name__ == '__main__': #O módulo atual (exemplo-simples.py) tem a variável __name__ com o valor '__main__'
+    main() #Logo, a função principal será chamada para que o código seja executado.
