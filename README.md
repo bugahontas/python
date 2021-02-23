@@ -37,10 +37,12 @@ Criado por Guido van Rossum no final dos anos 80 e divulgado em 1991, Python é 
 Este repositório encontra-se sob a licença _GNU GPLv3_.
 
 _Por que licença GNU GPL?_
+
 Este repositório é **livre** e de **código aberto**. Então você tem as liberdades de: 
 * Estudar;
 * Modificar e 
 * Compartilhar os arquivos de código-fonte com quem quiser. 
+
 **E assim deve continuar para que mais e mais pessoas tenham as mesmas liberdades**. Portanto, esta licença veta a incorporação de códigos do presente repositório em projetos proprietários (código fechado) ou em projetos que usem licenças incompatíveis com a GNU GPL. Esta licença também permite o uso comercial deste reposítório. Em qualquer caso (comercial e não comercial), ao compartilhar o arquivo com licença GNU GPL você deve **SEMPRE**:
 * Disponibilizar o código-fonte; 
 * Citar o nome do autor original;
