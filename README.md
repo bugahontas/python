@@ -56,5 +56,5 @@ Em qualquer caso (comercial e não comercial), ao distribuir o arquivo com licen
 * **Manter o código sob a licença GNU GPL** para que o código continue livre e aberto;
 * Anexar uma cópia da licença ao código-fonte. 
 
-Para mais informações sobre a licença, consultar o arquivo "LICENSE" disponível neste repositório.
+Para mais informações sobre a licença, consultar o arquivo _LICENSE_ disponível neste repositório.
 
