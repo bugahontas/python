@@ -1,6 +1,6 @@
 ![python](https://user-images.githubusercontent.com/63076968/108634158-0af90200-7457-11eb-8b12-af44e3c255d9.png)
 
-# Python (versão 3.8.2)
+# Python (versão 3.8.5)
  
 Seja muito bem vindo(a)! Este repositório contém códigos escritos em Python testados com o interpretador na versão 3.8.5 dentro da IDE **IDLE** (*Python's Integrated Development and Learning Environment*). 
 
@@ -12,7 +12,7 @@ Dúvidas sobre os códigos e configurações do interpretador ou do IDLE: abra u
 
 Porque já vem pré-instalado no Ubuntu 20.04 LTS (sistema operacional da máquina de testes). Ou seja, pronto pra uso e, melhor: num sistema GNU/Linux **livre**, **leve**, **seguro** e **estável**! 
 
-:warning: ATENÇÃO.: você pode escolher outras versões e outros sistemas operacionais compatíveis, mas em todos eles é **RECOMENDÁVEL usar python3**.
+:warning: ATENÇÃO.: você pode escolher outras versões e outros sistemas operacionais, mas em todos eles é **RECOMENDÁVEL usar python3**.
 
 :point_right: **Por que IDLE**?
 
