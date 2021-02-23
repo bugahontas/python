@@ -2,7 +2,7 @@
 
 # Python (versão 3.8.2)
  
-Seja muito bem vindo(a)! Este repositório contém códigos escritos em Python testados com o interpretador na versão 3.8.2 dentro da IDE **IDLE** (*Python's Integrated Development and Learning Environment*). 
+Seja muito bem vindo(a)! Este repositório contém códigos escritos em Python testados com o interpretador na versão 3.8.5 dentro da IDE **IDLE** (*Python's Integrated Development and Learning Environment*). 
 
 Dúvidas sobre os códigos e configurações do interpretador ou do IDLE: abra uma issue e vamos conversar! :wink:
 
@@ -26,10 +26,27 @@ Criado por Guido van Rossum no final dos anos 80 e divulgado em 1991, Python é 
 *  Automatização de tarefas massantes:exclamation: 
 *  Criação de jogos e mídias audiovisuais:exclamation:
 *  Sistemas aeroespaciais:exclamation:
-* *Ethical hacking* e Segurança da Informação:exclamation:
-
---- 
+* *Ethical hacking* e Segurança da Informação:exclamation: 
 
 					  Então, tá esperando o que? 
 
 :computer: **Use o repositório pra aprender esta linguagem fantástica e venha fazer parte da comunidade Python!** :snake:
+
+---
+
+Este repositório encontra-se sob a licença _GNU GPLv3_.
+
+_Por que licença GNU GPL?_
+Este repositório é **livre** e de **código aberto**. Então você tem as liberdades de: 
+* Estudar;
+* Modificar e 
+* Compartilhar os arquivos de código-fonte com quem quiser. 
+**E assim deve continuar para que mais e mais pessoas tenham as mesmas liberdades**. Portanto, esta licença veta a incorporação de códigos do presente repositório em projetos proprietários (código fechado) ou em projetos que usem licenças incompatíveis com a GNU GPL. Esta licença também permite o uso comercial deste reposítório. Em qualquer caso (comercial e não comercial), ao compartilhar o arquivo com licença GNU GPL você deve **SEMPRE**:
+* Disponibilizar o código-fonte; 
+* Citar o nome do autor original;
+* Mencionar as modificações no código feitas por você;
+* **Manter o código sob a licença GNU GPL** para que o código continue livre e aberto;
+* Anexar uma cópia da licença ao código-fonte. 
+
+Para mais informações sobre a licença, consultar o arquivo "LICENSE" disponível neste repositório.
+
