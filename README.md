@@ -43,7 +43,13 @@ Este repositório é **livre** e de **código aberto**. Então você tem as libe
 * Modificar e 
 * Compartilhar os arquivos de código-fonte com quem quiser. 
 
-**E assim deve continuar para que mais e mais pessoas tenham as mesmas liberdades**. Portanto, esta licença veta a incorporação de códigos do presente repositório em projetos proprietários (código fechado) ou em projetos que usem licenças incompatíveis com a GNU GPL. Esta licença também permite o uso comercial deste reposítório. Em qualquer caso (comercial e não comercial), ao compartilhar o arquivo com licença GNU GPL você deve **SEMPRE**:
+**E assim deve continuar para que mais e mais pessoas tenham as mesmas liberdades**. Portanto, esta licença **veta** a incorporação de códigos do presente repositório em:
+* Projetos proprietários (código fechado) ou
+* Projetos que usem licenças incompatíveis com a GNU GPL. 
+
+Esta licença **permite** o uso comercial deste reposítório. 
+
+Em qualquer caso (comercial e não comercial), ao distribuir o arquivo com licença GNU GPL você deve **SEMPRE**:
 * Disponibilizar o código-fonte; 
 * Citar o nome do autor original;
 * Mencionar as modificações no código feitas por você;
