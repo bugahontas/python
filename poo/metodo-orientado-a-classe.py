@@ -3,8 +3,8 @@
 class Pessoa():
     total_instancia = 0 #Este é um atributo da classe, não do objeto
     @classmethod #Decorador que habilita o método contaInstancia a funcionar com o parâmetro da classe ao invés do objeto (self)
-    def contaInstancia(classe): #Aqui "Pessoa" é passado para o parâmetro "classe"
-        classe.total_instancia += 1 #Modifica o atributo da classe toda vez que um objeto é criado
+    def contaInstancia(cls): #Aqui "Pessoa" é passado para o parâmetro "cls"
+        cls.total_instancia += 1 #Modifica o atributo da classe toda vez que um objeto é criado
     def __init__(self):
         Pessoa.contaInstancia() #Chama o método orientado à classe a cada instanciação
         self.criaNome()
