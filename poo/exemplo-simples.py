@@ -5,7 +5,7 @@ class Pessoa():
         self.nome = nome
         self.idade = idade
     def __str__(self): #Mostra atributos do objeto. 
-        return self.nome + ' tem ' + str(self.idade) + ' anos.' #Aqui self.idade vira string pra concatenar com as outras palavras (strings). Poderia ser print com f-string também...
+        return self.nome + ' tem ' + str(self.idade) + ' anos.' #Aqui self.idade vira string pra concatenar com as outras palavras (strings)
     def maioridade(self):
         if self.idade >= 18:
             print('Logo, é MAIOR de idade!')
