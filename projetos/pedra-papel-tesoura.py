@@ -1,5 +1,5 @@
 from random import randint
-import verificadores as vrf
+import complementares as cpl
 
 opcoes = {0: 'PEDRA',
           1: 'PAPEL',
@@ -32,15 +32,15 @@ def placar(usuario, pc, caractere = '-', qtd = 25):
 def mensagem_final(usuario, pc):
     print()
     if opcoes[usuario] == opcoes[pc]:
-        print(f'  RESULTADO = {vrf.empate()}')
+        print(f'  RESULTADO = {cpl.empate()}')
     else:
         print('   VENCEDOR = ', end = '')
         if opcoes[usuario] == 'PEDRA':
-            print(vrf.pedra(pc))
+            print(cpl.pedra(pc))
         elif opcoes[usuario] == 'PAPEL':
-            print(vrf.papel(pc))
+            print(cpl.papel(pc))
         else:
-            print(vrf.tesoura(pc))
+            print(cpl.tesoura(pc))
 
 def main():
     menu()

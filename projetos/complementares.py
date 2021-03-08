@@ -1,16 +1,16 @@
-def pedra(pc): #0
+def pedra(pc): 
     if pc == 1:
         return 'COMPUTADOR!'
     else:
         return 'VOCÊ!'
 
-def papel(pc): #1
+def papel(pc):
     if pc == 2:
         return 'COMPUTADOR!'
     else:
         return 'VOCÊ!'
 
-def tesoura(pc): #2
+def tesoura(pc):
     if pc == 0:
         return 'COMPUTADOR!'
     else:
