@@ -13,15 +13,13 @@ def menu(caractere = '=', qtd = 29):
     print(caractere * qtd)
 
 def usuario_escolhe(): 
-    usuario = int(input('Qual você escolhe? '))
-    return usuario
+    return int(input('Qual você escolhe? '))
 
 def pc_escolhe():
     pc = randint(0, 2)
     return pc
 
 def placar(usuario, pc, caractere = '-', qtd = 25):
-    print()
     print()
     print(caractere * qtd)
     print('         PLACAR        ')
@@ -44,7 +42,7 @@ def mensagem_final(usuario, pc):
 
 def main():
     menu()
-    Usuario = usuario_escolhe()
+    Usuario = cpl.valida_valor(usuario_escolhe())
     Pc = pc_escolhe()
     placar(Usuario, Pc)
     mensagem_final(Usuario, Pc)
