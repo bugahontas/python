@@ -4,4 +4,4 @@
 * Cada implementação está separada em diretórios diferentes, junto com seus respectivos arquivos de README.md e módulos.  
 * O topo de cada arquivo contém um cabeçalho informando como o código funciona. Por favor, **leia o cabeçalho**!
 
-## **ATENÇÃO** - Todos os projetos aqui presentes rodam apenas em modo texto.
+## **ATENÇÃO** - Os projetos aqui presentes precisam de alguma IDE para funcionarem.
