@@ -17,7 +17,7 @@
             4. PAPEL vence PEDRA. Logo, computador vence!'''
 
 from random import randint
-import complementares as cpl #Consultar arquivo "complementares.py" disponível neste diretório.
+import modulos_complementares as cpl #Consultar arquivo "complementares.py" disponível neste diretório.
 
 opcoes = {0: 'PEDRA',
           1: 'PAPEL',
