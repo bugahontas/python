@@ -2,6 +2,7 @@
 '''Data: 10/03/2021'''
 '''Nome do arquivo: modulos-complementares.py'''
 '''Módulos complementares que verificam as escolhas do usuário e do computador feitas no arquivo "pedra-papel-tesoura.py"'''
+'''Salve este arquivo no mesmo diretório do arquivo pedra-papel-tesoura.py'''
 
 #Verifica se o valor digitado pelo usuário é um número de 0 a 2.
 def valida_valor(usuario, caractere = '!', qtd = 42): 
