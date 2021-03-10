@@ -1,15 +1,19 @@
 '''Autora: Helena Maruf'''
 '''Data: 10/03/2021'''
-'''Descrição: este código é uma implementação via CLI do jogo clássico "Pedra, Papel, Tesoura."'''
+'''Descrição: este código é uma implementação em texto do jogo clássico "Pedra, Papel, Tesoura."'''
 '''Funcionamento:
     --> O usuário escolhe uma opção teclando 0 para "PEDRA," 1 para "PAPEL" ou 2 para "TESOURA".
     --> Depois, é a vez do computador escolher gerando aleatoriamente um desses valores.
     --> Se o número escolhido pelo usuário for válido, ele é comparado com o número escolhido pelo computador.
         OBS.: se o usuário digitar letras e/ou números fora do intervalo de 0 a 2, o código dará erro e entrará em loop até o usuário digitar 0, 1 ou 2.
     --> Lembrando que PEDRA vence TESOURA, TESOURA vence PAPEL, PAPEL vence PEDRA.
-        -- Se usuário e computador escolherem a mesma opção (PEDRA-PEDRA, PAPEL-PAPEL ou TESOURA-TESOURA) dão empate!'''
-    
-
+        -- Se usuário e computador escolherem a mesma opção (PEDRA-PEDRA, PAPEL-PAPEL ou TESOURA-TESOURA), haverá empate!
+    --> Para sair do jogo, tecle 9. Para continuar jogando, aperte qualquer tecla sem ser o 9.
+    --> Exemplo de rodada:
+            1. Usuário tecla 0 (referente a PEDRA)
+            2. Computador gera aleatoriamente o número 1 (referente a PAPEL)
+            3. Então, o placar será mostrado como PEDRA X PAPEL
+            4. PAPEL vence PEDRA. Logo, computador vence!'''
 
 from random import randint
 import complementares as cpl #Consultar arquivo "complementares.py" disponível neste diretório.
@@ -53,13 +57,22 @@ def mensagem_final(usuario, pc):
             print(cpl.papel(pc))
         else:
             print(cpl.tesoura(pc))
+    print()
+
+def para_ou_repete():
+    return input('Jogar de novo? [Tecle 9 para sair] ')
 
 def main():
-    menu()
-    Usuario = cpl.valida_valor(usuario_escolhe())
-    Pc = pc_escolhe()
-    placar(Usuario, Pc)
-    mensagem_final(Usuario, Pc)
+    while True:
+        menu()
+        Usuario = cpl.valida_valor(usuario_escolhe())
+        Pc = pc_escolhe()
+        placar(Usuario, Pc)
+        mensagem_final(Usuario, Pc)
+        Loop = para_ou_repete() 
+        if Loop == '9':
+            break
+        print()
     
 if __name__ == '__main__':
     main()
