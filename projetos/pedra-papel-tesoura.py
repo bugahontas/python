@@ -1,5 +1,18 @@
+'''Autora: Helena Maruf'''
+'''Data: 10/03/2021'''
+'''Descrição: este código é uma implementação via CLI do jogo clássico "Pedra, Papel, Tesoura."'''
+'''Funcionamento:
+    --> O usuário escolhe uma opção teclando 0 para "PEDRA," 1 para "PAPEL" ou 2 para "TESOURA".
+    --> Depois, é a vez do computador escolher gerando aleatoriamente um desses valores.
+    --> Se o número escolhido pelo usuário for válido, ele é comparado com o número escolhido pelo computador.
+        OBS.: se o usuário digitar letras e/ou números fora do intervalo de 0 a 2, o código dará erro e entrará em loop até o usuário digitar 0, 1 ou 2.
+    --> Lembrando que PEDRA vence TESOURA, TESOURA vence PAPEL, PAPEL vence PEDRA.
+        -- Se usuário e computador escolherem a mesma opção (PEDRA-PEDRA, PAPEL-PAPEL ou TESOURA-TESOURA) dão empate!'''
+    
+
+
 from random import randint
-import complementares as cpl
+import complementares as cpl #Consultar arquivo "complementares.py" disponível neste diretório.
 
 opcoes = {0: 'PEDRA',
           1: 'PAPEL',
@@ -13,10 +26,10 @@ def menu(caractere = '=', qtd = 29):
     print(caractere * qtd)
 
 def usuario_escolhe(): 
-    return int(input('Qual você escolhe? '))
+    return input('Qual você escolhe? ')
 
 def pc_escolhe():
-    pc = randint(0, 2)
+    pc = randint(0, 2) #Aqui o pc escolhe (gera) um número aleatório de 0 a 2.
     return pc
 
 def placar(usuario, pc, caractere = '-', qtd = 25):
@@ -27,6 +40,7 @@ def placar(usuario, pc, caractere = '-', qtd = 25):
     print(f'   {opcoes[usuario]}  X  {opcoes[pc]}')
     print(caractere * qtd)
 
+#Mostra quem venceu ou se houve empate.
 def mensagem_final(usuario, pc):
     print()
     if opcoes[usuario] == opcoes[pc]:
