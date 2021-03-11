@@ -17,7 +17,6 @@
             4. PAPEL vence PEDRA. Logo, computador vence!'''
 
 from random import randint
-import modulos_complementares as cpl #Consultar arquivo "complementares.py" disponível neste diretório.
 
 opcoes = {0: 'PEDRA',
           1: 'PAPEL',
@@ -33,6 +32,18 @@ def menu(caractere = '=', qtd = 29):
 def usuario_escolhe(): 
     return input('Qual você escolhe? ')
 
+#Verifica se o valor digitado pelo usuário é um número de 0 a 2.
+def valida_valor(usuario, caractere = '!', qtd = 42): 
+    print()
+    while True:
+        if usuario.isdigit() and usuario == '0' or usuario == '1' or usuario == '2':
+            break
+        else:
+            print(caractere * qtd)
+            usuario = input('----ERRO---- Digite um número de 0 a 2: ')
+            print(caractere * qtd)
+    return int(usuario)
+
 def pc_escolhe():
     pc = randint(0, 2) #Aqui o pc escolhe (gera) um número aleatório de 0 a 2.
     return pc
@@ -45,19 +56,46 @@ def placar(usuario, pc, caractere = '-', qtd = 25):
     print(f'   {opcoes[usuario]}  X  {opcoes[pc]}')
     print(caractere * qtd)
 
+#Funções pedra(), papel(), tesoura() e empate() comparam a escolha do usuário com a escolha do pc.
+
+#Esta função será chamada se a escolha do usuário for PEDRA.
+def pedra(pc): 
+    if opcoes[pc] == 'PAPEL':
+        return 'COMPUTADOR!'
+    else:
+        return 'VOCÊ!'
+
+#Esta função será chamada se a escolha do usuário for PAPEL.
+def papel(pc):
+    if opcoes[pc] == 'TESOURA':
+        return 'COMPUTADOR!'
+    else:
+        return 'VOCÊ!'
+
+#Esta função será chamada se a escolha do usuário for TESOURA.
+def tesoura(pc):
+    if opcoes[pc] == 'PEDRA':
+        return 'COMPUTADOR!'
+    else:
+        return 'VOCÊ!'
+
+#Esta função será chamada se usuário e pc fizerem a mesma escolha.
+def empate():
+    return 'EMPATE!'
+
 #Mostra quem venceu ou se houve empate.
 def mensagem_final(usuario, pc):
     print()
     if opcoes[usuario] == opcoes[pc]:
-        print(f'  RESULTADO = {cpl.empate()}')
+        print(f'  RESULTADO = {empate()}')
     else:
         print('   VENCEDOR = ', end = '')
         if opcoes[usuario] == 'PEDRA':
-            print(cpl.pedra(pc))
+            print(pedra(pc))
         elif opcoes[usuario] == 'PAPEL':
-            print(cpl.papel(pc))
+            print(papel(pc))
         else:
-            print(cpl.tesoura(pc))
+            print(tesoura(pc))
     print()
 
 def para_ou_repete():
@@ -66,7 +104,7 @@ def para_ou_repete():
 def main():
     while True:
         menu()
-        Usuario = cpl.valida_valor(usuario_escolhe())
+        Usuario = valida_valor(usuario_escolhe())
         Pc = pc_escolhe()
         placar(Usuario, Pc)
         mensagem_final(Usuario, Pc)
