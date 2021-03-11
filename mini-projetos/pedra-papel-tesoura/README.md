@@ -2,4 +2,4 @@
 
 Implementação do jogo Pedra, papel e tesoura em código Python.
 
-**Como o código funciona**? Leia o cabeçalho dos arquivos _.py_.
+**Como o código funciona**? Leia o cabeçalho do arquivo _.py_.
