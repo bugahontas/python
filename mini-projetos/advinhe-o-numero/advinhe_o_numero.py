@@ -1,13 +1,7 @@
-from random import randint, sample
+from random import randint
 
-def gera_intervalo():
-    lista_numeros = []
-    for numero in range(0, 10):
-        lista_numeros.append(numero)
-    return lista_numeros
-
-def numero_sorteado(lista):
-    return sample(lista, 1)
+def numero_sorteado():
+    return randint(0, 9)
 
 def jogador_da_vez(jogador, caractere = '*', qtd = 50):
     print(caractere * qtd)
@@ -18,7 +12,7 @@ def jogador_da_vez(jogador, caractere = '*', qtd = 50):
 def usuario_escolhe(tentativa):
     return input(f'Tentativa {tentativa} - Advinhe um número de 0 a 9: ')
 
-def valida_valor(usuario, caractere = 'X', qtd = 36):
+def valida_valor_do_usuario(usuario, caractere = 'X', qtd = 36):
     while True:
         if usuario.isdigit() and int(usuario) >= 0 and int(usuario) < 10:
             break
@@ -28,24 +22,49 @@ def valida_valor(usuario, caractere = 'X', qtd = 36):
             print(caractere * qtd)
     return int(usuario)
 
-def pc_escolhe():
-    pc = randint(0, 9)
+def pc_escolhe(lista):
+    while True:
+        pc = randint(0, 9)
+        if pc not in lista:
+            lista.append(pc)
+            print(lista)
+            break
     return pc
 
 def mensagem(jogador, sorteado, tentativa):
     print(f'--> {jogador} acertou o número {sorteado} na tentativa {tentativa}')
         
+def placar(tent_usu, tent_pc, caractere = '-', qtd = 35):
+    print()
+    print()
+    print(caractere * qtd)
+    print('              PLACAR')
+    print(caractere * qtd)
+    print(f'USUÁRIO   {tent_usu}    X    {tent_pc}   COMPUTADOR')
+    print(caractere * qtd)
+
+def resultado(tent_usu, tent_pc):
+    print()
+    print()
+    if tent_usu == tent_pc:
+        print('        Resultado = EMPATE!')
+    else:
+        print('        VENCEDOR = ', end = '')
+        if tent_usu < tent_pc:
+            print('USUÁRIO!')
+        else:
+            print('COMPUTADOR!')    
         
 def main():
-    Sorteado = numero_sorteado(gera_intervalo())
+    Sorteado = numero_sorteado()
 
     jogador_da_vez('USUÁRIO')
     Tentativa_usuario = 1
     while True:
-        Usuario = valida_valor(usuario_escolhe(Tentativa_usuario))
-        if Usuario == Sorteado[0]:
+        Usuario = valida_valor_do_usuario(usuario_escolhe(Tentativa_usuario))
+        if Usuario == Sorteado:
             print()
-            mensagem('USUÁRIO', Sorteado[0], Tentativa_usuario)
+            mensagem('USUÁRIO', Sorteado, Tentativa_usuario)
             break
         else:
             Tentativa_usuario += 1
@@ -53,14 +72,17 @@ def main():
 
     jogador_da_vez('COMPUTADOR')
     Tentativa_pc = 1
+    Ja_escolhidos_pc = []
     while True:
-        Pc = pc_escolhe()
-        if Pc == Sorteado[0]:
-            mensagem('COMPUTADOR', Sorteado[0], Tentativa_pc)
+        Pc = pc_escolhe(Ja_escolhidos_pc)
+        if Pc == Sorteado:
+            mensagem('COMPUTADOR', Sorteado, Tentativa_pc)
             break
         else:
             Tentativa_pc += 1
-    
 
+    placar(Tentativa_usuario, Tentativa_pc)
+    resultado(Tentativa_usuario, Tentativa_pc)
+    
 if __name__ == '__main__':
     main()
