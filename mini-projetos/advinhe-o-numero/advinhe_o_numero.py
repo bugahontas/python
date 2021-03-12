@@ -27,7 +27,6 @@ def pc_escolhe(lista):
         pc = randint(0, 9)
         if pc not in lista:
             lista.append(pc)
-            print(lista)
             break
     return pc
 
