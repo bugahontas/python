@@ -1,7 +1,7 @@
 '''Autora: Helena Maruf'''
 '''Data: 10/03/2021'''
-'''Nome do arquivo: pedra-papel-tesoura.py'''
-'''Descrição: este código é uma implementação em texto do jogo clássico "Pedra, Papel, Tesoura."'''
+'''Nome do arquivo: pedra_papel_tesoura.py'''
+'''Descrição: este código é uma implementação em modo texto do jogo clássico "Pedra, Papel, Tesoura."'''
 '''Funcionamento:
     --> O usuário escolhe uma opção teclando 0 para "PEDRA," 1 para "PAPEL" ou 2 para "TESOURA".
     --> Depois, é a vez do computador escolher gerando aleatoriamente um desses valores.
