@@ -9,10 +9,8 @@ def jogador_da_vez(jogador, caractere = '*', qtd = 50):
     print(caractere * qtd)
     print()
 
-def usuario_escolhe(tentativa):
-    return input(f'Tentativa {tentativa} - Advinhe um número de 0 a 9: ')
-
-def valida_valor_do_usuario(usuario, caractere = 'X', qtd = 36):
+def usuario_escolhe(tentativa, caractere = 'X', qtd = 36):
+    usuario = input(f'Tentativa {tentativa} - Advinhe um número de 0 a 9: ')
     while True:
         if usuario.isdigit() and int(usuario) >= 0 and int(usuario) < 10:
             break
@@ -60,7 +58,7 @@ def main():
     jogador_da_vez('USUÁRIO')
     Tentativa_usuario = 1
     while True:
-        Usuario = valida_valor_do_usuario(usuario_escolhe(Tentativa_usuario))
+        Usuario = usuario_escolhe(Tentativa_usuario)
         if Usuario == Sorteado:
             print()
             mensagem('USUÁRIO', Sorteado, Tentativa_usuario)
