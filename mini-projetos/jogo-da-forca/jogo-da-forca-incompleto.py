@@ -15,10 +15,21 @@ def cria_lacunas(sorteada):
     for letra in sorteada:
         lacunas.append('--')
     return lacunas
+
+def usuario_escolhe():
+    while True:
+        escolha = input('Escolha uma letra: ')
+        if escolha.isalpha() and len(escolha) == 1:
+            return escolha.lower()
+        else:
+            print('ERRO!')
+            print()
                    
 def main():
     Sorteada = sorteia_palavra()
-    cria_lacunas(Sorteada)
+    Lacunas = cria_lacunas(Sorteada)
+    Escolha = usuario_escolhe()
+    
     
 
 if __name__ == '__main__':
