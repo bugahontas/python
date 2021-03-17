@@ -14,7 +14,7 @@ def sorteia_palavra():
     return todas_palavras[chave]
 
 def total_tentativas(sorteada):
-    return len(sorteada) * 3
+    return len(sorteada) * 2
 
 def cria_lacunas(sorteada):
     lacunas = []
@@ -22,14 +22,23 @@ def cria_lacunas(sorteada):
         lacunas.append('--')
     return lacunas
 
-def usuario_escolhe():
+def separador(caractere = '-', qtd = 70):
+    print(caractere * qtd)
+
+def usuario_escolhe(tentativa, escolhidas):
     while True:
-        escolha = input('Escolha uma letra: ')
+        escolha = input(f'Tentativa {tentativa} - Escolha uma nova letra: ')
         if escolha.isalpha() and len(escolha) == 1:
-            return escolha.lower()
+            if escolha not in escolhidas:
+                escolhidas.append(escolha)
+                break
+            else:
+                print(f'ERRO - Letra {escolha} já foi escolhida!')
+                print()
         else:
-            print('ERRO!')
+            print('ERRO - Você não digitou uma letra!')
             print()
+    return escolha.lower()
 
 def acertou_ou_errou(escolha, sorteada, lacunas, erradas):
     i = 0
@@ -50,20 +59,36 @@ def mostra_chutes(lacunas, erradas):
     print(f'Chutes errados: {erradas}')
     print()
         
-        
-                   
+def resultado(tentativa, limite, sorteada):
+    print()
+    if tentativa > limite:
+        print('                          FORCA!')
+        print()
+        print(f'            A palavra correta era:    {sorteada}')
+    else:
+        print('               PARABÉNS! Você acertou a palavra!')
+                      
 def main():
     Sorteada = sorteia_palavra()
     Limite = total_tentativas(Sorteada)
     Lacunas = cria_lacunas(Sorteada)
+
+    Escolhidas = []
     Erradas = []
     Tentativa = 1
     Index = 0
-    print(Sorteada)
+
     while Tentativa <= Limite:
-        Escolha = usuario_escolhe()
+        separador()
+        Escolha = usuario_escolhe(Tentativa, Escolhidas)
         Lacunas, Erradas = acertou_ou_errou(Escolha, Sorteada, Lacunas, Erradas)
         mostra_chutes(Lacunas, Erradas)
+        if '--' not in Lacunas:
+            break
+        else:
+            Tentativa += 1
+
+    resultado(Tentativa, Limite, Sorteada)
 
 if __name__ == '__main__':
     main()
