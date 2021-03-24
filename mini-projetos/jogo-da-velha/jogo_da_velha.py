@@ -34,6 +34,27 @@ def escolhe_posicao(jogador, ja_escolhidas):
             escolha = input('Escolha outra posição: ')
             print()
             
+def analisa_posicoes():
+    inicio = 0
+    fim = 3
+    X_total = 0
+    O_total = 0
+
+    for p in range(inicio, fim):
+        if p == 'X':
+            X_total += 1
+        elif p == 'O':
+            O_total += 1
+    if X_total == 3:
+        return 'JOGADOR 1 VENCE!'
+    elif O_total == 3:
+        return 'JOGADOR 2 VENCE!'
+
+    inicio = fim
+    fim += 3 
+
+    
+
 def main():
     Posicoes = posicoes_no_tabuleiro()
 
@@ -42,7 +63,7 @@ def main():
     Vez = 1
     Ja_escolhidas = []
     
-    while Sinal == '':
+    while True:
 
         if Vez % 2 != 0:
             Escolha = escolhe_posicao('JOGADOR 1', Ja_escolhidas)
@@ -50,6 +71,8 @@ def main():
         else:
             Escolha = escolhe_posicao('JOGADOR 2', Ja_escolhidas)
             Posicoes[Escolha - 1] = 'O'
+
+        mostra_tabuleiro(Posicoes)
 
         Vez += 1
 
