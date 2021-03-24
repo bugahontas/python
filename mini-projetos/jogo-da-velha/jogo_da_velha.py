@@ -144,11 +144,11 @@ def analisa_diagonal(posicoes):
         return ''
 
 
-def mensagem_final(resultado, vez, caractere = '=', qtd = 20):
+def mensagem_final(resultado, caractere = '=', qtd = 20):
     print()
     print()
     print(f'{caractere * qtd} RESULTADO = ', end = '')
-    if vez == 10:
+    if resultado == '':
         print(f'EMPATE! {caractere * qtd}')
     else:    
         print(f'{resultado} {caractere * qtd}')
@@ -163,7 +163,7 @@ def main():
     Ja_escolhidas = [] # Lista com posições já escolhidas durante a rodada.
     Resultado = ''
     
-    while Resultado == '' and Vez <= 9:
+    while Resultado == '' and Vez < 10:
         if Vez % 2 != 0:
             Escolha = escolhe_posicao('JOGADOR 1', Ja_escolhidas)
             Posicoes[Escolha - 1] = 'X'
@@ -185,7 +185,7 @@ def main():
 
         Vez += 1
 
-    mensagem_final(Resultado, Vez)
+    mensagem_final(Resultado)
 
 
 if __name__ == '__main__':
