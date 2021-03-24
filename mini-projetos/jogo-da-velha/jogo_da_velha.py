@@ -83,6 +83,33 @@ def analisa_verticais(posicoes):
 
     if fim > 8:
         return ''
+
+def analisa_diagonal(posicoes):
+    X_total = 0
+    O_total = 0
+    inicio = 0
+    fim = 8
+    passo = 4
+
+    while fim != 4:
+        for p in range(inicio, fim + 1, passo):
+            if posicoes[p] == 'X':
+                X_total += 1
+            elif posicoes[p] == 'O':
+                O_total += 1
+            if X_total == 3:
+                return 'JOGADOR 1 VENCE!'
+            elif O_total == 3:
+                return 'JOGADOR 2 VENCE!'
+
+        inicio += 2
+        fim -= 2
+        passo = 2
+        X_total = 0
+        O_total = 0
+    
+    if fim == 4:
+        return ''
     
     
 
@@ -101,12 +128,18 @@ def main():
             Escolha = escolhe_posicao('JOGADOR 1', Ja_escolhidas)
             Posicoes[Escolha - 1] = 'X'
             Resultado = analisa_horizontais(Posicoes)
-            Resultado = analisa_verticais(Posicoes)
+            if Resultado == '':
+                Resultado = analisa_verticais(Posicoes)
+                if Resultado == '':
+                    Resultado = analisa_diagonal(Posicoes)
         else:
             Escolha = escolhe_posicao('JOGADOR 2', Ja_escolhidas)
             Posicoes[Escolha - 1] = 'O'
             Resultado = analisa_horizontais(Posicoes)
-            Resultado = analisa_verticais(Posicoes)
+            if Resultado == '':
+                Resultado = analisa_verticais(Posicoes)
+                if Resultado == '':
+                    Resultado = analisa_diagonal(Posicoes)
 
         mostra_tabuleiro(Posicoes)
 
