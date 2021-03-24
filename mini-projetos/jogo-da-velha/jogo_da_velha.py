@@ -1,10 +1,13 @@
 def posicoes_no_tabuleiro():
     return [p for p in range(1, 10)]
 
+
 def mostra_tabuleiro(posicoes, horizontal = 21, vertical = 2, caracter_linha = '-', coluna = '|', espaco = '      '):
     linha = caracter_linha * horizontal
     inicio = 1
     fim = 4
+
+    print()
     while fim <= 10:
         for p in range(inicio, fim):
             if p == fim - 1:
@@ -15,15 +18,19 @@ def mostra_tabuleiro(posicoes, horizontal = 21, vertical = 2, caracter_linha = '
             print(linha)
         inicio = fim
         fim += 3
+
     return posicoes
             
+
 def escolhe_posicao(jogador, ja_escolhidas):
     print()
+
     if jogador == 'JOGADOR 1':
         escolha = input(f'{jogador} - Botar "X" na posição: ')    
     else:
         escolha = input(f'{jogador} - Botar "O" na posição: ')
     print()
+
     while True:
         if escolha.isdigit() and 1 <= int(escolha) <= 9 and escolha not in ja_escolhidas:
             ja_escolhidas.append(escolha)
@@ -34,6 +41,7 @@ def escolhe_posicao(jogador, ja_escolhidas):
             escolha = input('Escolha outra posição: ')
             print()
             
+
 def analisa_horizontais(posicoes):
     inicio = 0
     fim = 3
@@ -50,7 +58,6 @@ def analisa_horizontais(posicoes):
             return 'JOGADOR 1 VENCE!'
         elif O_total == 3:
             return 'JOGADOR 2 VENCE!'
-
         inicio = fim
         fim += 3 
         X_total = 0
@@ -58,6 +65,7 @@ def analisa_horizontais(posicoes):
 
     if fim > 9:
         return ''
+
 
 def analisa_verticais(posicoes):
     inicio = 0
@@ -75,7 +83,6 @@ def analisa_verticais(posicoes):
             return 'JOGADOR 1 VENCE!'
         elif O_total == 3:
             return 'JOGADOR 2 VENCE!'
-
         inicio += 1 
         fim += 1 
         X_total = 0
@@ -83,6 +90,7 @@ def analisa_verticais(posicoes):
 
     if fim > 8:
         return ''
+
 
 def analisa_diagonal(posicoes):
     X_total = 0
@@ -101,7 +109,6 @@ def analisa_diagonal(posicoes):
                 return 'JOGADOR 1 VENCE!'
             elif O_total == 3:
                 return 'JOGADOR 2 VENCE!'
-
         inicio += 2
         fim -= 2
         passo = 2
@@ -110,7 +117,16 @@ def analisa_diagonal(posicoes):
     
     if fim == 4:
         return ''
-    
+
+
+def mensagem_final(resultado, vez, caractere = '=', qtd = 20):
+    print()
+    print()
+    print(f'{caractere * qtd} RESULTADO = ', end = '')
+    if vez == 10:
+        print(f'EMPATE! {caractere * qtd}')
+    else:    
+        print(f'{resultado} {caractere * qtd}')
     
 
 def main():
@@ -122,8 +138,7 @@ def main():
     Ja_escolhidas = []
     Resultado = ''
     
-    while Resultado == '':
-
+    while Resultado == '' and Vez <= 9:
         if Vez % 2 != 0:
             Escolha = escolhe_posicao('JOGADOR 1', Ja_escolhidas)
             Posicoes[Escolha - 1] = 'X'
@@ -145,10 +160,8 @@ def main():
 
         Vez += 1
 
-    print()
-    print()
-    print(Resultado)
+    mensagem_final(Resultado, Vez)
+
 
 if __name__ == '__main__':
     main()
-
