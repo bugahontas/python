@@ -33,34 +33,6 @@ def escolhe_posicao(jogador, ja_escolhidas):
             print('ERRO - POSIÇÃO INVÁLIDA OU JÁ ESCOLHIDA!')
             escolha = input('Escolha outra posição: ')
             print()
-        
-def verifica_resultado(posicoes):
-    X_total = 0
-    O_total = 0
-
-    inicio = 0
-    fim = 3
-    while fim <= 10:
-        for p in range(inicio, fim):
-            if posicoes[p] == 'X':
-                X_total += 1
-            if posicoes[p] == 'O':
-                O_total += 1
-            if X_total == 3:
-                sinal = 'para'
-                X_venceu = True
-                return sinal, X_venceu
-            if O_total == 3:
-                sinal = 'para'
-                O_venceu = True
-                return sinal, O_venceu
-            
-            
-        inicio = fim
-        fim += 3 
-            
-        
-    
             
 def main():
     Posicoes = posicoes_no_tabuleiro()
@@ -69,20 +41,15 @@ def main():
 
     Vez = 1
     Ja_escolhidas = []
-    Sinal = ''
-    X_Venceu = False
-    O_Venceu = False
-
+    
     while Sinal == '':
 
         if Vez % 2 != 0:
             Escolha = escolhe_posicao('JOGADOR 1', Ja_escolhidas)
             Posicoes[Escolha - 1] = 'X'
-            Sinal = verifica_resultado(mostra_tabuleiro(Posicoes))
         else:
             Escolha = escolhe_posicao('JOGADOR 2', Ja_escolhidas)
             Posicoes[Escolha - 1] = 'O'
-            Sinal = verifica_resultado(mostra_tabuleiro(Posicoes))
 
         Vez += 1
 
