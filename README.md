@@ -1,7 +1,6 @@
 ![python](https://user-images.githubusercontent.com/63076968/108634158-0af90200-7457-11eb-8b12-af44e3c255d9.png)
 
 # Python (versão 3.8.5)
-https://img.shields.io/badge/licen%C3%A7a-v3.0-blue
  
 Seja muito bem vindo(a)! Este repositório contém códigos escritos em Python testados com o interpretador na versão 3.8.5 dentro da IDE **IDLE** (*Python's Integrated Development and Learning Environment*). 
 
