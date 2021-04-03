@@ -48,7 +48,7 @@ def dica_do_oraculo():
              'O que é um peido pra quem tá cagado?',
              'Aquilo é uma estrela ou um drone?',
              'Se você está ferrado(a), lembre-se: sempre existe alguém mais ferrado que você!',
-             'A Seita do pobre: "A Seita" vale refeição?',
+             'A Seita do pobre = "A Seita" vale refeição?',
              'Tome água, pois lágrimas vão rolar...']
     print()
     print(f'******Dica do Oráculo: {choice(lista)}')
