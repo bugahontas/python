@@ -22,5 +22,12 @@ def menu_geral():
 
 def arredondamento():
     valor = float(input('Digite um valor decimal: '))
+
+def inteiro_ou_decimal(valor):
+    if valor - int(valor) == 0:
+        print(f'{valor} é inteiro')
+    else:
+        print(f'{valor} é decimal')
+    
     
     
