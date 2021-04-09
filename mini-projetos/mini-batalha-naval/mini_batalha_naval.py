@@ -90,7 +90,7 @@ def pc_ataca(posicoes, frota):
         if isinstance(p, int):
             posicoes_restantes.append(p)
 
-    print(posicoes_restantes)
+    #print(posicoes_restantes)
     posicoes_restantes = set(posicoes_restantes)
     frota = set(frota)
 
@@ -101,13 +101,30 @@ def pc_ataca(posicoes, frota):
 
 def mensagem_ataque(quem, escolhida, posicao):
     print()
-    print(f'{quem} ', end = '')
+    print(f'###### {quem} ', end = '')
     if posicao == '*':
         print(f'mirou na posição {escolhida} e ACERTOU um navio inimigo!')
     else:
         print(f'mirou na posição {escolhida} e ERROU!')
         
             
+def placar(restantes_jog, restantes_pc, caractere = '=', total = 36):
+    linha = caractere * total
+
+    print()
+    print('           ', linha)
+    print('                          PLACAR')
+    print(f'                 JOGADOR  {restantes_jog} X {restantes_pc}  COMPUTADOR')
+    print('           ', linha)
+    
+
+def resultado(restantes_jog, restantes_pc):
+    print('VENCEDOR = ', end = '')
+    if restantes_jog == 0:
+        print('COMPUTADOR!')
+    else:
+        print('JOGADOR!')
+
 
 def main():
     Posicoes = posicoes_no_tabuleiro()
@@ -115,13 +132,16 @@ def main():
 
     Frota_jogador = jogador_posiciona(Posicoes)
     Frota_pc = pc_posiciona(Posicoes, Frota_jogador)
-    print(Frota_pc)
+    #print(Frota_pc)
 
     mostra_tabuleiro(Posicoes)
 
+    Navios_jogador = len(Frota_jogador)
+    Navios_pc = len(Frota_pc)
+
     Vez = 1
 
-    while True:
+    while Navios_jogador != 0 or Navios_pc != 0:
         if Vez % 2 != 0:
             mensagem_frota_jogador(Frota_jogador)
 
@@ -129,6 +149,7 @@ def main():
 
             if Escolhida in Frota_pc:
                 Posicoes[Escolhida - 1] = '*'
+                Navios_pc -= 1 
             else:
                 Posicoes[Escolhida - 1] = 'X'
 
@@ -139,14 +160,19 @@ def main():
 
             if Escolhida in Frota_jogador:
                 Posicoes[Escolhida - 1] = '*'
+                Navios_jogador -= 1
             else:
                 Posicoes[Escolhida - 1] = 'X'
             
             mensagem_ataque('COMPUTADOR', Escolhida, Posicoes[Escolhida - 1])
+
+        placar(Navios_jogador, Navios_pc)
         
         mostra_tabuleiro(Posicoes)
 
         Vez += 1
+
+    resultado(Navios_jogador, Navios_pc)
         
 
 if __name__ == '__main__':
