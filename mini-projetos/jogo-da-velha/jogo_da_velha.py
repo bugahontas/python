@@ -36,7 +36,7 @@ def mostra_tabuleiro(posicoes, horizontal = 21, vertical = 2, caracter_linha = '
                 print(f'{posicoes[p - 1]:^5}')
             else:
                 print(f'{posicoes[p - 1]:^5} {coluna} ', end = '')
-        if fim < 10: # Para posições da última linha (7, 8 e 9) que não têm linha abaixo.         
+        if fim < 10: # Exclui posições da última linha (7, 8 e 9) que não têm linha abaixo.         
             print(linha)
         inicio = fim
         fim += 3
