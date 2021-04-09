@@ -1,4 +1,4 @@
-from random import sample
+from random import sample, choice
 
 def posicoes_no_tabuleiro():
     return [p for p in range(1, 65)]
@@ -23,7 +23,7 @@ def mostra_tabuleiro(posicoes, horizontal = 60, vertical = 7, caracter_linha = '
     print()
 
     return posicoes
-
+        
 
 def mensagem_erro1():
     return '***** ERRO - POSIÇÃO INEXISTENTE OU JÁ ESCOLHIDA!'
@@ -36,7 +36,7 @@ def mensagem_erro2():
 def jogador_posiciona(posicoes):
     ja_escolhidas = []
 
-    for navio in range(1, 11):
+    for navio in range(1, 21):
         while True:
             try:
                 posicao = int(input(f'=> Navio {navio} na posição: '))
@@ -45,6 +45,7 @@ def jogador_posiciona(posicoes):
                     continue
             except Exception:
                 print(mensagem_erro2())
+                continue
             else:
                 ja_escolhidas.append(posicao)
                 break
@@ -58,14 +59,10 @@ def pc_posiciona(posicoes, ja_escolhidas):
 
     disponiveis = list(posicoes - ja_escolhidas)
 
-    pc_escolhe = sample(disponiveis, 10)
-
-    return pc_escolhe
+    return sample(disponiveis, 20)
 
 
-'''def jogador_ataca():
-    ja_escolhidas = []
-
+def jogador_ataca(posicoes):
     while True:
         try:
             posicao = int(input('Mirar na posição: '))
@@ -74,29 +71,84 @@ def pc_posiciona(posicoes, ja_escolhidas):
                 continue
         except Exception:
                 print(mensagem_erro2())
+                continue
         else:
-            ja_escolhidas.append(posicao)
-            break'''
+            break
+
+    return posicao
     
-    
+
+def pc_ataca(posicoes, frota):
+    '''posicoes_restantes = []
+    #print(f'POSICOES ANTES: {posicoes}')
+    for p in posicoes:
+        if isinstance(p, int):
+            posicoes_restantes.append(p)
+    #print(f'POSICOES DEPOIS: {posicoes2}')'''
+
+    posicoes_restantes = set(posicoes_restantes)
+    frota = set(frota)
+
+    disponiveis = list(posicoes_restantes - frota)
+    #print(disponiveis)
+
+    #escolhida = choice(disponiveis)
+
+    return choice(disponiveis)
+   
+
+def mensagem_ataque(vez, escolhida, posicao):
+    print()
+    if vez % 2 != 0:
+        if posicao == '*':
+            return '         VOCÊ mirou na posição ' + str(escolhida) + ' e ACERTOU um navio do computador!'
+        else:
+            return '         VOCÊ mirou na posição ' + str(escolhida) + ' e ERROU!'
+    else:
+        if posicao == '*':
+            return '         COMPUTADOR mirou na posição ' + str(escolhida) + ' e ACERTOU um navio seu!'
+        else:
+            return '         COMPUTADOR mirou na posição ' + str(escolhida) + ' e ERROU!'
+        
+            
 
 def main():
     Posicoes = posicoes_no_tabuleiro()
     mostra_tabuleiro(Posicoes)
 
-    Esquadra_jogador = jogador_posiciona(Posicoes)
-    Esquadra_pc = pc_posiciona(Posicoes, Esquadra_jogador)
+    Frota_jogador = jogador_posiciona(Posicoes)
+    print(Frota_jogador)
+    Frota_pc = pc_posiciona(Posicoes, Frota_jogador)
+    print(Frota_pc)
     
-    for n in Esquadra_jogador:
+    for n in Frota_jogador:
         Posicoes[n - 1] = 'J'
 
     mostra_tabuleiro(Posicoes)
 
-    '''Vez = 1
+    Vez = 1
 
     while True:
         if Vez % 2 != 0:
-            jogador_ataca()'''
+            Escolhida = jogador_ataca(Posicoes)
+
+            if Escolhida in Frota_pc:
+                Posicoes[Escolhida - 1] = '*'
+            else:
+                Posicoes[Escolhida - 1] = 'X'
+        else:
+            Escolhida = pc_ataca(Posicoes, Frota_pc)
+
+            if Escolhida in Frota_jogador:
+                Posicoes[Escolhida - 1] = '*'
+            else:
+                Posicoes[Escolhida - 1] = 'X'
+
+        print(mensagem_ataque(Vez, Escolhida, Posicoes[Escolhida - 1]))
+
+        mostra_tabuleiro(Posicoes)
+
+        Vez += 1
         
 
 if __name__ == '__main__':
