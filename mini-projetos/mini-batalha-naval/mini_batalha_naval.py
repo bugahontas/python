@@ -10,13 +10,13 @@ def mostra_tabuleiro(posicoes, horizontal = 60, vertical = 7, caracter_linha = '
     fim = 9
 
     print()
-    while fim <= 65:
+    while fim <= 41:
         for p in range(inicio, fim):
             if p == fim - 1:
                 print(f'{posicoes[p - 1]:^5}')
             else:
                 print(f'{posicoes[p - 1]:^5} {coluna} ', end = '')
-        if fim < 64:  
+        if fim < 40:  
             print(linha)
         inicio = fim
         fim += 8
@@ -36,7 +36,7 @@ def mensagem_erro2():
 def jogador_posiciona(posicoes):
     ja_escolhidas = []
 
-    for navio in range(1, 21):
+    for navio in range(1, 11):
         while True:
             try:
                 posicao = int(input(f'=> Navio {navio} na posição: '))
@@ -59,7 +59,7 @@ def pc_posiciona(posicoes, ja_escolhidas):
 
     disponiveis = list(posicoes - ja_escolhidas)
 
-    return sample(disponiveis, 20)
+    return sample(disponiveis, 10)
 
 
 def jogador_ataca(posicoes):
@@ -117,12 +117,10 @@ def main():
     mostra_tabuleiro(Posicoes)
 
     Frota_jogador = jogador_posiciona(Posicoes)
-    print(Frota_jogador)
     Frota_pc = pc_posiciona(Posicoes, Frota_jogador)
-    print(Frota_pc)
     
-    for n in Frota_jogador:
-        Posicoes[n - 1] = 'J'
+    '''for n in Frota_jogador:
+        Posicoes[n - 1] = 'J'''
 
     mostra_tabuleiro(Posicoes)
 
@@ -130,6 +128,8 @@ def main():
 
     while True:
         if Vez % 2 != 0:
+            print(f'Sua frota nas posições: {Frota_jogador}')
+            print()
             Escolhida = jogador_ataca(Posicoes)
 
             if Escolhida in Frota_pc:
