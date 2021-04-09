@@ -50,7 +50,7 @@ def jogador_posiciona(posicoes):
                 frota.append(posicao)
                 break
 
-    return frota
+    return sorted(frota)
 
 
 def mensagem_frota_jogador(frota):
@@ -119,7 +119,8 @@ def placar(restantes_jog, restantes_pc, caractere = '=', total = 36):
     
 
 def resultado(restantes_jog, restantes_pc):
-    print('VENCEDOR = ', end = '')
+    print()
+    print('                   VENCEDOR = ', end = '')
     if restantes_jog == 0:
         print('COMPUTADOR!')
     else:
@@ -141,7 +142,7 @@ def main():
 
     Vez = 1
 
-    while Navios_jogador != 0 or Navios_pc != 0:
+    while Navios_jogador != 0 and Navios_pc != 0:
         if Vez % 2 != 0:
             mensagem_frota_jogador(Frota_jogador)
 
