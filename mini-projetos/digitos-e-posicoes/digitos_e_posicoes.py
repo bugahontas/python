@@ -6,6 +6,7 @@
     --> Este é um jogo entre jogador (usuário) e computador.
     --> O computador irá sortear um número de 100 a 999 que não será revelado.
     --> O jogador irá informar um número de 100 a 999.
+        --> Se o jogador informar uma letra ou qualquer número fora desse intervalo, o código entrará em loop até o usuário digitar os dados corretos.
     --> As pistas são dadas por dígito do número do jogador, lido da esquerda para a direita.
         --> Pista "errado": dígito não consta em nenhuma posição do número sorteado pelo computador.
         --> Pista "certo na posição errada": dígito consta no número sorteado, mas em uma posição diferente da digitada.
