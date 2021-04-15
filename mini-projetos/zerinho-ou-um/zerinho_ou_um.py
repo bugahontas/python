@@ -84,7 +84,7 @@ def mostra_escolhas(nome_e_escolha, caractere = '.'):
     print(linha2)
 
     for chave, valor in nome_e_escolha.items():
-        print(f'{chave.center(10, " ")} = {valor}')
+        print(f'{chave.center(15, " ")} = {valor}')
     print()
 
 
