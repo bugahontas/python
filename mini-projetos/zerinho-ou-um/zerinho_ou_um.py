@@ -50,6 +50,7 @@ def cria_amigos(total, padrao = -1):
     for a in range(1, total + 1):
         while True:
             nome = input(f'Amigo no. {a}: Nome = ')
+            nome = nome.strip()
             if len(nome) == 0:
                 mensagem_erro()
             else:
