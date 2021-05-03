@@ -15,22 +15,44 @@
         5. O código retorna como resultado "1m = 1 x 10^2cm" (lê-se "1 metro vale 1 vezes 10 elevado a 2 centímetros").'''
 
 
+# Para criar conversores com outras unidades, basta alterar unidades, siglas e expoentes
+    # apenas nesta função! 
+# Facilita a reutilização deste código.
+def cria_unidades():
+    unidades = {'Metro': 'm',
+                'Decâmetro': 'dam',
+                'Hectomêtro': 'hm',
+                'Quilômetro': 'km',
+                'Decímetro': 'dm',
+                'Centímetro': 'cm',
+                'Milímetro': 'mm',
+                'Micrômetro': 'mic',
+                'Nanômetro': 'nm',
+                'Picômetro': 'pm'}
 
-def menu(caractere = '=', total = 27):
+    siglas = ['pm', 'nm', 'mic', 'mm', 'cm', 'dm', 'm', 'dam', 'hm', 'km']
+
+    todos_expoentes = {'pm': -12,
+                       'nm': -9,
+                       'mic': -6,
+                       'mm': -3,
+                       'cm': -2,
+                       'dm': -1,
+                       'm': 0,
+                       'dam': 1,
+                       'hm': 2,
+                       'km': 3}
+
+    return unidades, siglas, todos_expoentes
+
+
+def menu(unidades, caractere = '=', total = 27):
     linha = caractere * total
     print(linha)
     print('          OPÇÕES:')
     print(linha)
-    print(' Metro       =  Tecle [m]')
-    print(' Decâmetro   =  Tecle [dam]')
-    print(' Hectômetro  =  Tecle [hm]')
-    print(' Quilômetro  =  Tecle [km]')
-    print(' Decímetro   =  Tecle [dm]')
-    print(' Centímetro  =  Tecle [cm]')
-    print(' Milímetro   =  Tecle [mm]')
-    print(' Micrômetro  =  Tecle [mic]')
-    print(' Nanômetro   =  Tecle [nm]')
-    print(' Picômetro   =  Tecle [pm]')
+    for chave, valor in unidades.items():
+        print(f'{chave:^13} = Tecle [{valor}]')
     print(linha)
     print()
     
@@ -51,14 +73,12 @@ def valor_a_converter():
             return numero
 
 
-def unidade_original():
-    unidades = ['pm', 'nm', 'mic', 'mm', 'cm', 'dm', 'm', 'dam', 'hm', 'km']
-
+def unidade_original(siglas):
     while True:
         original = input('Unidade atual = ')
         original = original.lower()
     
-        if original not in unidades:
+        if original not in siglas:
             print(mensagem_erro())
             print()
         else:
@@ -66,14 +86,12 @@ def unidade_original():
             return original
             
 
-def unidade_alvo():
-    unidades = ['pm', 'nm', 'mic', 'mm', 'cm', 'dm', 'm', 'dam', 'hm', 'km']
-
+def unidade_alvo(siglas):
     while True:
         alvo = input('Converter para = ')
         alvo = alvo.lower()
     
-        if alvo not in unidades:
+        if alvo not in siglas:
             print(mensagem_erro())
             print()
         else:
@@ -81,18 +99,7 @@ def unidade_alvo():
             return alvo
 
 
-def conversao(numero, original, alvo):
-    todos_expoentes = {'pm': -12,
-                       'nm': -9,
-                       'mic': -6,
-                       'mm': -3,
-                       'cm': -2,
-                       'dm': -1,
-                       'm': 0,
-                       'dam': 1,
-                       'hm': 2,
-                       'km': 3}
-
+def conversao(todos_expoentes, numero, original, alvo):
     for chave, valor in todos_expoentes.items():
         if original == chave:
             expoente_1 = todos_expoentes[chave]
@@ -109,15 +116,17 @@ def mostra_resultado(numero, original, expoente, alvo):
 
 
 def main():
-    menu()
+    Unidades, Siglas, Todos_expoentes = cria_unidades()
+
+    menu(Unidades)
 
     Valor = valor_a_converter()
 
-    Original = unidade_original()
+    Original = unidade_original(Siglas)
 
-    Alvo = unidade_alvo()
+    Alvo = unidade_alvo(Siglas)
 
-    Expoente = conversao(Valor, Original, Alvo)
+    Expoente = conversao(Todos_expoentes, Valor, Original, Alvo)
 
     mostra_resultado(Valor, Original, Expoente, Alvo)
     
